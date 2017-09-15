@@ -51,13 +51,20 @@ func _fixed_process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		get_node("Aim Ray").rotation_deg = 270
 		velocity.x = 1
-		last_direction.y = 0
-		last_direction.x = 1
+		last_direction.y = 2
+		last_direction.x = 30
+		$ElephantSprite.set_flip_h(false)
+		$Uzi.set_flip_h(false)
+		$Uzi.position.x = 120
+		
 	elif Input.is_action_pressed("ui_left"):
 		get_node("Aim Ray").rotation_deg = 90
 		velocity.x = -1
-		last_direction.y = 0
-		last_direction.x = -1
+		last_direction.y = 2
+		last_direction.x = -30
+		$ElephantSprite.set_flip_h(true)
+		$Uzi.set_flip_h(true)
+		$Uzi.position.x = -120
 	else:
 		velocity = Vector2(0,0) #do not adjust last_direction in this case
 	
